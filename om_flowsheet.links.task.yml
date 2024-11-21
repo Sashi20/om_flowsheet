@@ -1,0 +1,10 @@
+om_flowsheet.proposal_pending:
+  route_name: om_flowsheet.proposal_pending
+  title: 'Pending Proposals'
+  weight: 1
+  base_route: om_flowsheet.proposal_pending
+om_flowsheet.proposal_all:
+  route_name: om_flowsheet.proposal_all
+  title: 'All Proposals'
+  weight: 2
+  base_route: om_flowsheet.proposal_pending

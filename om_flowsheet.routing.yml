@@ -1,0 +1,182 @@
+om_flowsheet.proposal_form:
+  path: /chemical/flowsheeting-project/proposal
+  defaults:
+    _title: 'Flowsheet Proposal Form'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetProposalForm
+  requirements:
+    _permission: 'om flowsheet create proposal'
+om_flowsheet.proposal_pending:
+  path: /chemical/flowsheeting-project/manage-proposal/pending
+  defaults:
+    _title: 'Pending Proposals'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_proposal_pending'
+  requirements:
+    _permission: 'om flowsheet manage proposal'
+om_flowsheet.proposal_all:
+  path: /chemical/flowsheeting-project/manage-proposal/all
+  defaults:
+    _title: 'All Proposals'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_proposal_all'
+  requirements:
+    _permission: 'om flowsheet manage proposal'
+om_flowsheet.proposal_approval_form:
+  path: /chemical/flowsheeting-project/manage-proposal/approve/{proposal_id}
+  defaults:
+    _title: 'Approve Proposal'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetProposalApprovalForm
+  requirements:
+    _permission: 'om flowsheet manage proposal'
+om_flowsheet.proposal_edit_form:
+  path: /chemical/flowsheeting-project/manage-proposal/edit
+  defaults:
+    _title: 'Edit Proposal'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetProposalEditForm
+  requirements:
+    _permission: 'om flowsheet manage proposal'
+om_flowsheet.proposal_status_form:
+  path: /chemical/flowsheeting-project/manage-proposal/status/{proposal_id}
+  defaults:
+    _title: 'Proposal Status'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetProposalStatusForm
+  requirements:
+    _permission: 'om flowsheet approve proposal'
+om_flowsheet.code_approval:
+  path: /chemical/flowsheeting-project/code-approval
+  defaults:
+    _title: 'LM Manage Code Approval'
+  requirements:
+    _permission: 'om flowsheet approve code'
+om_flowsheet.abstract_approval_form:
+  path: /chemical/flowsheeting-project/abstract-approval/approve
+  defaults:
+    _title: 'Code Approval'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetAbstractApprovalForm
+  requirements:
+    _permission: 'om flowsheet approve code'
+om_flowsheet.abstract_bulk_approval_form:
+  path: /chemical/flowsheeting-project/abstract-approval/bulk
+  defaults:
+    _title: 'Bulk Manage'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetAbstractBulkApprovalForm
+  requirements:
+    _permission: 'om flowsheet bulk manage abstract'
+om_flowsheet.abstract:
+  path: /chemical/flowsheeting-project/abstract-code/flowsheet-project-list
+  defaults:
+    _title: 'Flowsheet project'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_abstract'
+  requirements:
+    _permission: 'om flowsheet upload code'
+om_flowsheet.upload_abstract_code_form:
+  path: /chemical/flowsheeting-project/abstract-code/upload
+  defaults:
+    _title: 'Abstract and Flowsheet Submission'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetUploadAbstractCodeForm
+  requirements:
+    _permission: 'om flowsheet upload code'
+om_flowsheet.download_abstract_file:
+  path: /chemical/flowsheeting-project/download/abstract-file/{proposal_id}
+  defaults:
+    _title: 'Code Download'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_download_abstract_file'
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.download_solution:
+  path: /chemical/flowsheeting-project/download/solution
+  defaults:
+    _title: 'Code Download'
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.download_experiment:
+  path: /chemical/flowsheeting-project/download/experiment
+  defaults:
+    _title: 'Code Download'
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.download_lab:
+  path: /chemical/flowsheeting-project/download/lab
+  defaults:
+    _title: 'Code Download'
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.download_full_experiment:
+  path: /chemical/flowsheeting-project/full-download/experiment
+  defaults:
+    _title: 'Code Download'
+  requirements:
+    _permission: 'om flowsheet approve code'
+om_flowsheet.download_full_project:
+  path: /chemical/flowsheeting-project/full-download/project/{proposal_id}
+  defaults:
+    _title: 'Code Download'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_download_full_project'
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.completed_proposals_all:
+  path: /chemical/flowsheeting-project/completed-flowsheet
+  defaults:
+    _title: 'Completed Flowsheets'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_completed_proposals_all'
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.progress_all:
+  path: /chemical/flowsheeting-project/flowsheet-progress
+  defaults:
+    _title: 'Flowsheets in Progress'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_progress_all'
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.run_form:
+  path: /chemical/flowsheeting-project/om-flowsheet-run/{proposal_id}
+  defaults:
+    _title: 'Download Codes'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetRunForm
+  requirements:
+    _permission: 'om flowsheet download code'
+om_flowsheet.download_user_defined_compound:
+  path: /chemical/flowsheeting-project/download/user-defined-compound-file
+  defaults:
+    _title: 'Download user defined compound file'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::om_flowsheet_download_user_defined_compound'
+  requirements:
+    _permission: 'download code'
+om_flowsheet.settings_form:
+  path: /admin/settings/om-flowsheet
+  defaults:
+    _title: 'om flowsheet Settings'
+    _form: \Drupal\om_flowsheet\Form\OmFlowsheetSettingsForm
+  requirements:
+    _permission: 'administer om flowsheet'
+om_flowsheet.lab_bulk_manage_exp_ajax:
+  path: /lab-bulk-manage-exp/ajax
+  defaults:
+    _title: 'Ajax callbacks'
+  requirements:
+    _permission: 'om flowsheet bulk manage abstract'
+om_flowsheet._list_flowsheet_certificates:
+  path: /chemical/flowsheeting-project/certificates
+  defaults:
+    _title: 'List of Flowsheet Certificates'
+    _controller: '\Drupal\om_flowsheet\Controller\DefaultController::_list_flowsheet_certificates'
+  requirements:
+    _permission: 'list flowsheet certificates'
+om_flowsheet.generate_pdf:
+  path: /chemical/flowsheeting-project/certificates-custom/pdf/{proposal_id}
+  defaults:
+    _title: 'Download Certificate'
+    _form: \Drupal\om_flowsheet\Form\GeneratePdf
+  requirements:
+    _permission: 'generate pdf'
+om_flowsheet._list_flowsheet_custom_certificates:
+  path: /chemical/flowsheeting-project/certificates-custom
+  defaults:
+    _title: 'List of Flowsheet Custom Certificates'
+  requirements:
+    _permission: 'list flowsheet custom certificates'
+om_flowsheet.verify_certificates:
+  path: /chemical/flowsheeting-project/certificates/verify/{qr_code?}
+  defaults:
+    _title: 'Certificate Verification'
+    _controller: '\Drupal\om_flowsheet\Controller\VerifyCertificatesController::verifyCertificates'
+  requirements:
+    _permission: 'verify certificates'

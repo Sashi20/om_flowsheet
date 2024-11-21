@@ -1,0 +1,6 @@
+name: 'OM Flowsheet'
+description: 'Flowsheeting Project, FOSSEE, IIT Bombay'
+package: FOSSEE
+core_version_requirement: ^9 || ^10
+type: module
+dependencies: {  }

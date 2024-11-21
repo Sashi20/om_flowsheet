@@ -1,0 +1,16 @@
+om_flowsheet.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    om_flowsheet_from_email:
+      type: string
+    om_flowsheet_emails:
+      type: string
+    om_flowsheet_cc_emails:
+      type: string
+    om_flowsheet_abstract_upload_extensions:
+      type: string
+    om_flowsheet_flowsheet_developed_process_source_extensions:
+      type: string
+    om_flowsheet_simulator_package_extensions:
+      type: string
