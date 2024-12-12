@@ -52,10 +52,10 @@ class DefaultController extends ControllerBase {
 
     } //$pending_data = $pending_q->fetchObject()
 	/* check if there are any pending proposals */
-    if (!$pending_rows) {
+   /* if (!$pending_rows) {
       \Drupal::messenger()->addStatus(t('There are no pending proposals.'));
       return '';
-    } //!$pending_rows
+    }*/ //!$pending_rows
     $pending_header = [
       'Date of Submission',
       'Student Name',
@@ -66,7 +66,7 @@ class DefaultController extends ControllerBase {
       '#type' => 'table',
       '#header' => $pending_header,
       '#rows' => $pending_rows,
-      '#empty' => 'no rows found',
+      '#empty' => 'no rows found'
     ];
     return $output;
   }
@@ -113,7 +113,7 @@ class DefaultController extends ControllerBase {
       $edit_url =  Link::fromTextAndUrl('Edit', Url::fromRoute('om_flowsheet.proposal_edit_form',['id'=>$proposal_data->id]))->toString();
       $mainLink = t('@linkApprove | @linkReject', array('@linkApprove' => $approval_url, '@linkReject' => $edit_url));
       $proposal_rows[$proposal_data->id] = [
-        date('d-m-Y', $proposal_data->creation_date),
+        $actual_completion_date,
         Link::fromTextAndUrl($proposal_data->contributor_name, Url::fromRoute('entity.user.canonical', ['user' => $proposal_data->uid])),
         $proposal_data->project_title,
         $actual_completion_date,
@@ -123,23 +123,20 @@ class DefaultController extends ControllerBase {
 
     } //$proposal_data = $proposal_q->fetchObject()
 	/* check if there are any pending proposals */
-    if (!$proposal_rows) {
-      \Drupal::messenger()->addStatus(t('There are no proposals.'));
-      return '';
-    } //!$proposal_rows
+     //!$proposal_rows
     $proposal_header = [
       'Date of Submission',
       'Student Name',
       'Title of the Lab',
       'Date of Completion',
       'Status',
-      'Action',
+      'Action'
     ];
     $output =  [
       '#type' => 'table',
       '#header' => $proposal_header,
       '#rows' => $proposal_rows,
-      '#empty' => 'no rows found',
+      '#empty' => 'no rows found'
     ];
     return $output;
   }
